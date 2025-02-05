@@ -6,7 +6,7 @@ get("/") do
 end
 
 
-get("/process_roll") do
+get("/process_roll") do # Even though the form generates the query string that gets added to the end of the path, this is still the route that we get. Meaning, we don't have to include the query string in the route here.
   @number_of_rolls = params.fetch("dice").to_i
   @number_of_sides = params.fetch("sides").to_i
   
